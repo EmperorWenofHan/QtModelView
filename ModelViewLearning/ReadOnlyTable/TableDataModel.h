@@ -4,7 +4,8 @@
 #include <QAbstractTableModel>
 #include <QVariant>
 
-class QTimer;
+const int COLS = 3;
+const int ROWS = 2;
 
 class TableDataModel : public QAbstractTableModel
 {
@@ -19,13 +20,16 @@ public:
 
     virtual QVariant data(const QModelIndex& index , int role = Qt::DisplayRole)const override;
 
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role)const;
+    // 编辑数据
+    virtual bool setData(const QModelIndex& index , const QVariant& value , int role = Qt::EditRole) override;
 
-public slots:
-    void timerHint();
+    virtual Qt::ItemFlags flags(const QModelIndex& index)const override;
 
 private:
-    QTimer* m_timer;
+    QString m_gridData[ROWS][COLS];
+
+signals:
+    void editCompleted(const QString& );
 
 };
 

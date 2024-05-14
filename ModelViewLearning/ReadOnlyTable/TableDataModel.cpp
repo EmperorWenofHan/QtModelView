@@ -1,16 +1,10 @@
 #include "TableDataModel.h"
-#include <QFont>
-#include <QBrush>
-#include <QTime>
-#include <QTimer>
+
 
 TableDataModel::TableDataModel(QObject* parent /*= nulllpte*/)
     : QAbstractTableModel(parent)
 {
-    m_timer = new QTimer(this);
-    m_timer->setInterval(1000);
-    connect(m_timer , SIGNAL(timeout()) , this , SLOT(timerHint()));
-    m_timer->start();
+
 }
 
 int TableDataModel::rowCount(const QModelIndex& parent /*= QModelIndex()*/) const
@@ -32,9 +26,7 @@ QVariant TableDataModel::data(const QModelIndex& index, int role /*= Qt::Display
     {
     case Qt::DisplayRole:
     {
-        return QString("Row%1 , Column%2")
-            .arg(index.row() + 1)
-            .arg(index.column() + 1);
+        return m_gridData[index.row()][index.column()];
     }
     default:
         break;
@@ -42,31 +34,18 @@ QVariant TableDataModel::data(const QModelIndex& index, int role /*= Qt::Display
     return QVariant();
 }
 
-QVariant TableDataModel::headerData(int section, Qt::Orientation orientation, int role) const
+bool TableDataModel::setData(const QModelIndex& index, const QVariant& value, int role /*= Qt::EditRole*/)
 {
-    if (Qt::DisplayRole == role)
+    if (role == Qt::EditRole)
     {
-        if (orientation == Qt::Horizontal)
-        {
-            switch (section)
-            {
-            case 0:
-                return QString("first");
-            case 1:
-                return QString("second");
-            case 2:
-                return QString("third");
-            default:
-                return QVariant();
-            }
-        }
+        m_gridData[index.row()][index.column()] = value.toString();
+        QString result = m_gridData[index.row()][index.column()];
+        emit editCompleted(result);
     }
-    return QVariant();
+    return true;
 }
 
-void TableDataModel::timerHint()
+Qt::ItemFlags TableDataModel::flags(const QModelIndex& index) const
 {
-    QModelIndex topLeft = createIndex(0, 0);
-    // 告知数据改变
-    emit dataChanged(topLeft, topLeft);
+    return Qt::ItemIsEditable | QAbstractTableModel::flags(index);
 }
