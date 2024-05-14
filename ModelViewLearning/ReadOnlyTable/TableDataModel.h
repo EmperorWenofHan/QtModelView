@@ -3,6 +3,8 @@
 
 #include <QAbstractTableModel>
 
+class QTimer;
+
 class TableDataModel : public QAbstractTableModel
 {
     Q_OBJECT
@@ -15,6 +17,12 @@ public:
     virtual int columnCount(const QModelIndex& parent = QModelIndex())const override;
 
     QVariant data(const QModelIndex& index , int role = Qt::DisplayRole)const override;
+
+public slots:
+    void timerHint();
+
+private:
+    QTimer* m_timer;
 
 };
 
