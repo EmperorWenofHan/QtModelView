@@ -1,32 +1,79 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+*.pdb
+*.user
 *.exe
-*.out
-*.app
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+*.sbr
+obj/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.lastbuildstate
+*.sdf
+*.manifest
+*.embed.manifest.res
+unsuccessfulbuild
+*.tli
+*.1.tlog
+*.ipch
+*.idb
+*.exp
+*.res
+packages/
+*.unsuccessfulbuild
+*.tlog
+*_manifest.rc
+*.opensdf
+*.orig
+*.VC.db
+*.VC.VC.opendb
+x64/
+source/x64/
+source/x64/[Dd]ebug
+source/x64/[Rr]elease
+source/ipch
+!source/k3d-gendef.exe
+/source/lib/
+/source/.vs
+/CoProcess_MainFrame/source/.vs
+/CoProcess_MainFrame/source/lib
+/CoProcess_MainFrame/source/*/x64
+/CoProcess_MainFrame/source/*/GeneratedFiles
+#Ignore files that do not need to be synchronized
+*.pcd
+/source/packages
+/source/NugetPackage/*/build/native/include/BuildingInformationIdentification.h
+/source/NugetPackage/*/build/native/include/*
+/source/NugetPackage/*/lib/native/x64/*
+*.nupkg
+/.idea
+*.CopyComplete
+/CoProcess_MainFrame/source/.vs
+/CoProcess_MainFrame/source/.vs
+/CoProcess_MainFrame/source/.vs/CoProcess_2015/v17/.suo
+/CoProcess_MainFrame/source/.vs/CoProcess_2015/v17/Browse.VC.db
+/CoProcess_MainFrame/source/.vs/CoProcess_2015/v17/fileList.bin
+/CoProcess_MainFrame/source/.vs/CoProcess_2015/v17/Solution.VC.db
+GeneratedFiles/
+[Dd]ebug/
+[Rr]elease/
+[Rr]elease_[Dd]ebug/
+
+v16
+.vs
+/CoProcess_Plugin/source/SMBlockModule/SMBlockModule.vcxproj.user
