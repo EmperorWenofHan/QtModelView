@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReadOnlyTable", "ReadOnlyTable\ReadOnlyTable.vcxproj", "{3FAAC45D-5D24-4104-B35B-2A9F8664D44D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TreeView", "TreeView\TreeView.vcxproj", "{D07AE51A-00B9-43A9-9FD7-0958086E428F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -15,6 +17,10 @@ Global
 		{3FAAC45D-5D24-4104-B35B-2A9F8664D44D}.Debug|x64.Build.0 = Debug|x64
 		{3FAAC45D-5D24-4104-B35B-2A9F8664D44D}.Release|x64.ActiveCfg = Release|x64
 		{3FAAC45D-5D24-4104-B35B-2A9F8664D44D}.Release|x64.Build.0 = Release|x64
+		{D07AE51A-00B9-43A9-9FD7-0958086E428F}.Debug|x64.ActiveCfg = Debug|x64
+		{D07AE51A-00B9-43A9-9FD7-0958086E428F}.Debug|x64.Build.0 = Debug|x64
+		{D07AE51A-00B9-43A9-9FD7-0958086E428F}.Release|x64.ActiveCfg = Release|x64
+		{D07AE51A-00B9-43A9-9FD7-0958086E428F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
