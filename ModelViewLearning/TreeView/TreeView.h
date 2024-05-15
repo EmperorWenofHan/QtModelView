@@ -18,6 +18,9 @@ public:
     TreeView(QWidget *parent = nullptr);
     ~TreeView();
 
+public slots:
+    void selectionChangedSlot(const QItemSelection& , const QItemSelection& );
+
 private:
     QList<QStandardItem*> prepareRow(const QString& first , const QString& second, const QString& third);
 
